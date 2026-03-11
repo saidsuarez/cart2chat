@@ -1,0 +1,1031 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-10 21:42-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: includes/class-pv-bootstrap.php:19 includes/class-pv-checkout-flow.php:647
+#: includes/class-pv-order-control.php:82
+msgid "Hi Cart2Chat, I want to place this order:"
+msgstr ""
+
+#: includes/class-pv-bootstrap.php:20 includes/class-pv-order-control.php:83
+msgid "Thank you. I am available to confirm."
+msgstr ""
+
+#: includes/class-pv-bootstrap.php:26 includes/class-pv-checkout-flow.php:664
+#: includes/class-pv-order-control.php:89
+#: includes/class-pv-order-control.php:141
+#: includes/class-pv-order-control.php:143
+#: includes/class-pv-order-control.php:245
+#: includes/class-pv-order-control.php:247
+#: includes/class-pv-whatsapp-gateway.php:281
+#: includes/class-pv-whatsapp-gateway.php:289
+#: includes/class-pv-whatsapp-gateway.php:309
+#: includes/class-pv-whatsapp-gateway.php:459
+#: assets/js/pv-whatsapp-blocks.js:17
+msgid "Order via WhatsApp"
+msgstr ""
+
+#: includes/class-pv-bootstrap.php:27 includes/class-pv-checkout-flow.php:292
+#: includes/class-pv-checkout-flow.php:675
+#: includes/class-pv-order-control.php:90
+#: includes/class-pv-order-control.php:145
+#: includes/class-pv-order-control.php:147
+#: includes/class-pv-order-control.php:249
+#: includes/class-pv-order-control.php:251
+msgid "Send order via WhatsApp"
+msgstr ""
+
+#: includes/class-pv-bootstrap.php:64
+msgid "Cart2Chat:"
+msgstr ""
+
+#: includes/class-pv-bootstrap.php:65
+msgid "requires WooCommerce to work properly."
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:58
+msgid "Customize your product"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:61
+msgid "How do you want to customize multiple units?"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:62
+msgid "All products the same (single form)"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:63
+msgid "Customize each product separately"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:92
+#: includes/class-pv-checkout-flow.php:507
+#, php-format
+msgid "Product #%d"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:163
+#: includes/class-pv-checkout-flow.php:220
+#: includes/class-pv-checkout-flow.php:538
+#: includes/class-pv-checkout-flow.php:575
+msgid "Product #"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:167
+#: includes/class-pv-checkout-flow.php:198
+#, php-format
+msgid "File: %s"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:168
+#: includes/class-pv-checkout-flow.php:199
+msgid "View image"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:189
+msgid "Personalization mode"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:190
+msgid "All equal for"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:190
+msgid "units"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:308
+msgid "WhatsApp order"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:309
+msgid "Send your full cart summary with shipping details and payment method."
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:311
+msgid "Send cart via WhatsApp"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:335
+msgid "Invalid order context."
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:367
+#: includes/class-pv-checkout-flow.php:1062
+#: includes/class-pv-checkout-flow.php:1411
+#: includes/class-pv-whatsapp-gateway.php:334
+msgid "Select an option"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:406
+#: includes/class-pv-order-control.php:1291
+msgid "Full name"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:409
+#: includes/class-pv-order-control.php:1294
+#: includes/class-pv-whatsapp-gateway.php:154
+msgid "City"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:410
+#: includes/class-pv-order-control.php:1295
+#: includes/class-pv-whatsapp-gateway.php:162
+msgid "State/Department"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:411
+#: includes/class-pv-order-control.php:1296
+msgid "Shipping address"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:412
+#: includes/class-pv-order-control.php:1297
+#: includes/class-pv-whatsapp-gateway.php:188
+msgid "Shipping notes"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:413
+#: includes/class-pv-order-control.php:1300
+#: includes/class-pv-whatsapp-gateway.php:181
+#: includes/class-pv-whatsapp-gateway.php:183
+msgid "Payment method"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:414
+#: includes/class-pv-order-control.php:1304
+msgid "Bank transfer (Bancolombia)"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:415
+#: includes/class-pv-order-control.php:1305
+msgid "Llave"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:416
+#: includes/class-pv-order-control.php:1306
+msgid "Nequi"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:417
+#: includes/class-pv-order-control.php:1307
+msgid "Daviplata"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:418
+#: includes/class-pv-order-control.php:1308
+msgid "Payment link (credit card)"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:460
+#, php-format
+msgid "The field \"%s\" is required."
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:467
+#, php-format
+msgid "Select a valid option for \"%s\"."
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:485
+msgid "Could not identify the product."
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:490
+msgid "Invalid product."
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:508
+#, php-format
+msgid "Complete required customization fields for Product #%d."
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:516
+msgid "Complete required customization fields."
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:529
+msgid "Order from product page"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:530
+#: includes/class-pv-checkout-flow.php:567
+#: includes/class-pv-whatsapp-gateway.php:200
+msgid "Product"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:531
+#: includes/class-pv-whatsapp-gateway.php:201
+msgid "Quantity"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:535
+#: includes/class-pv-checkout-flow.php:542
+msgid "Mode"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:535
+msgid "Individual customization"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:542
+msgid "All equal"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:559
+msgid "The cart is empty."
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:564
+msgid "Order from cart"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:588
+msgid "Cart total"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:604
+msgid "Customer and shipping details"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:633
+#: includes/class-pv-whatsapp-gateway.php:220
+msgid "Image uploaded in the order"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:811
+#: includes/class-pv-whatsapp-gateway.php:378
+msgid "The order could not be processed."
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:812
+msgid "Connection error. Please try again."
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:972
+#: includes/class-pv-checkout-flow.php:985
+#, php-format
+msgid "The field \"%s\" is required to customize this product."
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:1054
+#: includes/class-pv-checkout-flow.php:1410
+msgid "conditional"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:1072
+#: includes/class-pv-checkout-flow.php:1412
+msgid "Allowed formats: JPG, PNG, WEBP."
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:1120
+msgid "Could not process uploaded image. Please try again."
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:1125
+msgid "Image exceeds maximum size (5MB)."
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:1136
+msgid "Invalid image format. Use JPG, PNG, or WEBP."
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:1162
+msgid "Could not save image:"
+msgstr ""
+
+#: includes/class-pv-checkout-flow.php:1413
+msgid "Product customization"
+msgstr ""
+
+#: includes/class-pv-config.php:131
+msgid "Invalid JSON in product types."
+msgstr ""
+
+#: includes/class-pv-config.php:134
+msgid "Invalid JSON in fields by type."
+msgstr ""
+
+#: includes/class-pv-config.php:137
+msgid "Invalid JSON in payment methods."
+msgstr ""
+
+#: includes/class-pv-config.php:146 includes/class-pv-config.php:233
+#: includes/class-pv-config.php:333 includes/class-pv-order-control.php:692
+msgid "Configuration saved successfully."
+msgstr ""
+
+#: includes/class-pv-config.php:169 includes/class-pv-config.php:323
+msgid "You must create at least one valid product type."
+msgstr ""
+
+#: includes/class-pv-order-control.php:53
+msgid "General"
+msgstr ""
+
+#: includes/class-pv-order-control.php:54
+msgid "Design"
+msgstr ""
+
+#: includes/class-pv-order-control.php:55
+msgid "Catalog & Fields"
+msgstr ""
+
+#: includes/class-pv-order-control.php:56
+msgid "Usage Guide"
+msgstr ""
+
+#: includes/class-pv-order-control.php:258
+msgid ""
+"Customize the visual style of Cart2Chat forms and buttons on the frontend."
+msgstr ""
+
+#: includes/class-pv-order-control.php:264
+msgid "Visual style"
+msgstr ""
+
+#: includes/class-pv-order-control.php:268
+msgid "Flat"
+msgstr ""
+
+#: includes/class-pv-order-control.php:268
+msgid "Containers and fields without rounded corners."
+msgstr ""
+
+#: includes/class-pv-order-control.php:272
+msgid "Modern"
+msgstr ""
+
+#: includes/class-pv-order-control.php:272
+msgid "Containers and fields with rounded corners."
+msgstr ""
+
+#: includes/class-pv-order-control.php:277
+msgid "Theme"
+msgstr ""
+
+#: includes/class-pv-order-control.php:281
+msgid "Light"
+msgstr ""
+
+#: includes/class-pv-order-control.php:281
+msgid "Light background with dark text in containers and fields."
+msgstr ""
+
+#: includes/class-pv-order-control.php:285
+msgid "Dark"
+msgstr ""
+
+#: includes/class-pv-order-control.php:285
+msgid "Dark background with light text in containers and fields."
+msgstr ""
+
+#: includes/class-pv-order-control.php:290
+msgid "Buttons"
+msgstr ""
+
+#: includes/class-pv-order-control.php:293
+msgid "Show WhatsApp icon in buttons"
+msgstr ""
+
+#: includes/class-pv-order-control.php:296
+msgid "Button background color"
+msgstr ""
+
+#: includes/class-pv-order-control.php:300
+msgid "Button text color"
+msgstr ""
+
+#: includes/class-pv-order-control.php:305
+msgid "Product button text"
+msgstr ""
+
+#: includes/class-pv-order-control.php:309
+msgid "Checkout button text"
+msgstr ""
+
+#: includes/class-pv-order-control.php:316
+msgid "Save design settings"
+msgstr ""
+
+#: includes/class-pv-order-control.php:342
+msgid "Core setup for personalized sales flow."
+msgstr ""
+
+#: includes/class-pv-order-control.php:348
+msgid "How do you want to use Cart2Chat?"
+msgstr ""
+
+#: includes/class-pv-order-control.php:359
+#, php-format
+msgid "Recommended to start: <strong>%s</strong>."
+msgstr ""
+
+#: includes/class-pv-order-control.php:359
+#: includes/class-pv-order-control.php:1318
+msgid "Both options"
+msgstr ""
+
+#: includes/class-pv-order-control.php:363
+msgid "WhatsApp number for orders"
+msgstr ""
+
+#: includes/class-pv-order-control.php:366
+msgid "Numbers only. Example: 573001234567"
+msgstr ""
+
+#: includes/class-pv-order-control.php:370
+msgid "Opening message"
+msgstr ""
+
+#: includes/class-pv-order-control.php:373
+msgid "This message is used at the beginning of WhatsApp order messages."
+msgstr ""
+
+#: includes/class-pv-order-control.php:377
+msgid "Closing message"
+msgstr ""
+
+#: includes/class-pv-order-control.php:380
+msgid "Closing text shown at the end of WhatsApp order messages."
+msgstr ""
+
+#: includes/class-pv-order-control.php:384
+msgid "WhatsApp order form fields"
+msgstr ""
+
+#: includes/class-pv-order-control.php:386
+msgid "These fields apply to the WhatsApp order form shown on product pages."
+msgstr ""
+
+#: includes/class-pv-order-control.php:386
+msgid ""
+"If checkout flow is used, customer/shipping data is taken from WooCommerce "
+"checkout fields."
+msgstr ""
+
+#: includes/class-pv-order-control.php:387
+msgid ""
+"Define which fields are shown to customers, whether they are required, and "
+"their options when the field type is select."
+msgstr ""
+
+#: includes/class-pv-order-control.php:391
+msgid "Label"
+msgstr ""
+
+#: includes/class-pv-order-control.php:392
+#: includes/class-pv-order-control.php:725
+#: includes/class-pv-order-control.php:828
+msgid "Type"
+msgstr ""
+
+#: includes/class-pv-order-control.php:393
+#: includes/class-pv-order-control.php:726
+#: includes/class-pv-order-control.php:829
+msgid "Required"
+msgstr ""
+
+#: includes/class-pv-order-control.php:394
+#: includes/class-pv-order-control.php:728
+#: includes/class-pv-order-control.php:831
+msgid "Options (select)"
+msgstr ""
+
+#: includes/class-pv-order-control.php:395
+#: includes/class-pv-order-control.php:729
+#: includes/class-pv-order-control.php:833
+msgid "Actions"
+msgstr ""
+
+#: includes/class-pv-order-control.php:405
+msgid "Add field"
+msgstr ""
+
+#: includes/class-pv-order-control.php:407
+msgid ""
+"If the field type is select, use \"Add option\" to create, edit, or remove "
+"options."
+msgstr ""
+
+#: includes/class-pv-order-control.php:412
+msgid "Save changes"
+msgstr ""
+
+#: includes/class-pv-order-control.php:425
+#: includes/class-pv-order-control.php:792
+#: includes/class-pv-order-control.php:821
+#: includes/class-pv-order-control.php:1392
+msgid "Remove"
+msgstr ""
+
+#: includes/class-pv-order-control.php:584
+msgid "To review"
+msgstr ""
+
+#: includes/class-pv-order-control.php:585
+msgid "Received"
+msgstr ""
+
+#: includes/class-pv-order-control.php:586
+msgid "Paid"
+msgstr ""
+
+#: includes/class-pv-order-control.php:587
+msgid "Shipped"
+msgstr ""
+
+#: includes/class-pv-order-control.php:588
+msgid "Delivered"
+msgstr ""
+
+#: includes/class-pv-order-control.php:602
+msgid ""
+"This page is a practical guide for store owners using Cart2Chat day to day."
+msgstr ""
+
+#: includes/class-pv-order-control.php:604
+msgid "1. Quick start (first setup)"
+msgstr ""
+
+#: includes/class-pv-order-control.php:606
+#: includes/class-pv-order-control.php:642
+msgid "Go to Cart2Chat > General."
+msgstr ""
+
+#: includes/class-pv-order-control.php:607
+msgid "Choose how you will sell: product page, checkout, or both."
+msgstr ""
+
+#: includes/class-pv-order-control.php:608
+msgid "Enter your WhatsApp number in international format (numbers only)."
+msgstr ""
+
+#: includes/class-pv-order-control.php:609
+msgid "Set your opening message and closing message."
+msgstr ""
+
+#: includes/class-pv-order-control.php:610
+#: includes/class-pv-order-control.php:646
+msgid "Save changes."
+msgstr ""
+
+#: includes/class-pv-order-control.php:613
+msgid "2. If you want to sell from the product page"
+msgstr ""
+
+#: includes/class-pv-order-control.php:615
+msgid "Edit a WooCommerce product."
+msgstr ""
+
+#: includes/class-pv-order-control.php:616
+msgid "Open the Cart2Chat tab inside the product editor."
+msgstr ""
+
+#: includes/class-pv-order-control.php:617
+msgid "Enable personalized purchase and choose a product type."
+msgstr ""
+
+#: includes/class-pv-order-control.php:618
+msgid "Update the product."
+msgstr ""
+
+#: includes/class-pv-order-control.php:619
+msgid ""
+"On the storefront, the customer will see customization fields and the "
+"WhatsApp order button."
+msgstr ""
+
+#: includes/class-pv-order-control.php:622
+msgid "3. If you want to sell from checkout"
+msgstr ""
+
+#: includes/class-pv-order-control.php:624
+msgid "In Cart2Chat > General, use mode: Checkout only or Both options."
+msgstr ""
+
+#: includes/class-pv-order-control.php:625
+msgid "Go to WooCommerce > Settings > Payments."
+msgstr ""
+
+#: includes/class-pv-order-control.php:626
+msgid "Enable the payment method \"Order via WhatsApp\"."
+msgstr ""
+
+#: includes/class-pv-order-control.php:627
+msgid "Customers can complete checkout and send the order summary to WhatsApp."
+msgstr ""
+
+#: includes/class-pv-order-control.php:630
+msgid "4. How to manage product types and custom fields"
+msgstr ""
+
+#: includes/class-pv-order-control.php:632
+msgid "Go to Cart2Chat > Catalog & Fields."
+msgstr ""
+
+#: includes/class-pv-order-control.php:633
+msgid "Create product types (for example: Veterinary Record, Poster, Pin)."
+msgstr ""
+
+#: includes/class-pv-order-control.php:634
+msgid ""
+"Add fields for each type (text, number, textarea, select, file, email, tel)."
+msgstr ""
+
+#: includes/class-pv-order-control.php:635
+msgid "For select fields, add options with \"Add option\"."
+msgstr ""
+
+#: includes/class-pv-order-control.php:636
+msgid ""
+"Use Up/Down buttons to sort product types and fields in the desired order."
+msgstr ""
+
+#: includes/class-pv-order-control.php:637
+msgid "Save configuration."
+msgstr ""
+
+#: includes/class-pv-order-control.php:640
+msgid "5. How to manage the WhatsApp customer form"
+msgstr ""
+
+#: includes/class-pv-order-control.php:643
+msgid ""
+"In \"WhatsApp order form fields\", add the customer/shipping/payment fields "
+"you need."
+msgstr ""
+
+#: includes/class-pv-order-control.php:644
+msgid "Mark required fields when needed."
+msgstr ""
+
+#: includes/class-pv-order-control.php:645
+msgid "Use Up/Down buttons to sort the form fields."
+msgstr ""
+
+#: includes/class-pv-order-control.php:649
+msgid "6. Design settings"
+msgstr ""
+
+#: includes/class-pv-order-control.php:651
+msgid ""
+"Use Cart2Chat > Design to control style, theme, button colors, icon "
+"visibility, and button labels."
+msgstr ""
+
+#: includes/class-pv-order-control.php:652
+msgid "Font family and base button shape are inherited from your active theme."
+msgstr ""
+
+#: includes/class-pv-order-control.php:655
+msgid "7. Daily order management"
+msgstr ""
+
+#: includes/class-pv-order-control.php:657
+msgid ""
+"Open WooCommerce orders to review customer data and product customization "
+"details."
+msgstr ""
+
+#: includes/class-pv-order-control.php:658
+msgid "Use the Cart2Chat order panel to track stage and internal notes."
+msgstr ""
+
+#: includes/class-pv-order-control.php:661
+msgid "8. Troubleshooting"
+msgstr ""
+
+#: includes/class-pv-order-control.php:663
+msgid ""
+"No payment methods available at checkout: verify Cart2Chat mode includes "
+"checkout and the WhatsApp gateway is enabled in WooCommerce payments."
+msgstr ""
+
+#: includes/class-pv-order-control.php:664
+msgid ""
+"WhatsApp link is not opening correctly: verify the WhatsApp number format "
+"(numbers only, international format)."
+msgstr ""
+
+#: includes/class-pv-order-control.php:665
+msgid ""
+"Customer cannot continue: check required fields and required select options "
+"in your configuration."
+msgstr ""
+
+#: includes/class-pv-order-control.php:707
+msgid "9. Developer and support"
+msgstr ""
+
+#: includes/class-pv-order-control.php:709
+msgid "Developed by Pinxel."
+msgstr ""
+
+#: includes/class-pv-order-control.php:710
+msgid "Support email:"
+msgstr ""
+
+#: includes/class-pv-order-control.php:711
+msgid "If you want to support the developer with a donation, you can do it via PayPal."
+msgstr ""
+
+#: includes/class-pv-order-control.php:689
+msgid "Manage product types and custom fields for each type."
+msgstr ""
+
+#: includes/class-pv-order-control.php:694
+msgid "Could not save. Check required fields and try again."
+msgstr ""
+
+#: includes/class-pv-order-control.php:696
+msgid "Default configuration restored."
+msgstr ""
+
+#: includes/class-pv-order-control.php:703
+msgid "Product types and custom fields"
+msgstr ""
+
+#: includes/class-pv-order-control.php:708
+#: includes/class-pv-order-control.php:824
+#: includes/class-pv-product-fields.php:63
+msgid "Product type"
+msgstr ""
+
+#: includes/class-pv-order-control.php:710
+#: includes/class-pv-order-control.php:790
+#: includes/class-pv-order-control.php:834
+#: includes/class-pv-order-control.php:1390
+msgid "Up"
+msgstr ""
+
+#: includes/class-pv-order-control.php:711
+#: includes/class-pv-order-control.php:791
+#: includes/class-pv-order-control.php:835
+#: includes/class-pv-order-control.php:1391
+msgid "Down"
+msgstr ""
+
+#: includes/class-pv-order-control.php:712
+#: includes/class-pv-order-control.php:825
+msgid "Remove type"
+msgstr ""
+
+#: includes/class-pv-order-control.php:716
+#: includes/class-pv-order-control.php:826
+msgid "Type name"
+msgstr ""
+
+#: includes/class-pv-order-control.php:724
+#: includes/class-pv-order-control.php:827
+msgid "Field label"
+msgstr ""
+
+#: includes/class-pv-order-control.php:727
+#: includes/class-pv-order-control.php:830
+msgid "Show only if..."
+msgstr ""
+
+#: includes/class-pv-order-control.php:763
+#: includes/class-pv-order-control.php:822
+#: includes/class-pv-order-control.php:1380
+msgid "Yes"
+msgstr ""
+
+#: includes/class-pv-order-control.php:766
+#: includes/class-pv-order-control.php:819
+msgid "Always visible"
+msgstr ""
+
+#: includes/class-pv-order-control.php:784
+#: includes/class-pv-order-control.php:823
+#: includes/class-pv-order-control.php:1384
+msgid "Add option"
+msgstr ""
+
+#: includes/class-pv-order-control.php:798
+#: includes/class-pv-order-control.php:832
+msgid "Add field to this type"
+msgstr ""
+
+#: includes/class-pv-order-control.php:803
+msgid "Add product type"
+msgstr ""
+
+#: includes/class-pv-order-control.php:804
+msgid "For select fields, use \"Add option\" to create options."
+msgstr ""
+
+#: includes/class-pv-order-control.php:807
+msgid "Save configuration"
+msgstr ""
+
+#: includes/class-pv-order-control.php:808
+msgid "Restore default configuration?"
+msgstr ""
+
+#: includes/class-pv-order-control.php:808
+msgid "Restore defaults"
+msgstr ""
+
+#: includes/class-pv-order-control.php:818
+msgid "Field"
+msgstr ""
+
+#: includes/class-pv-order-control.php:820
+msgid "Select value"
+msgstr ""
+
+#: includes/class-pv-order-control.php:1164
+msgid "Unauthorized."
+msgstr ""
+
+#: includes/class-pv-order-control.php:1168
+msgid "Invalid nonce."
+msgstr ""
+
+#: includes/class-pv-order-control.php:1196
+msgid "Cart2Chat - Control"
+msgstr ""
+
+#: includes/class-pv-order-control.php:1212
+#: includes/class-pv-order-control.php:1249
+msgid "Order stage"
+msgstr ""
+
+#: includes/class-pv-order-control.php:1219
+#: includes/class-pv-order-control.php:1255
+msgid "Internal notes"
+msgstr ""
+
+#: includes/class-pv-order-control.php:1319
+msgid "Enable product-page button and WhatsApp payment method at checkout."
+msgstr ""
+
+#: includes/class-pv-order-control.php:1322
+msgid "Product page only"
+msgstr ""
+
+#: includes/class-pv-order-control.php:1323
+msgid ""
+"Customer sends the order via WhatsApp from each product page, without "
+"checkout."
+msgstr ""
+
+#: includes/class-pv-order-control.php:1326
+msgid "Checkout only"
+msgstr ""
+
+#: includes/class-pv-order-control.php:1327
+msgid ""
+"Customer adds products to cart and finishes with \"Order via WhatsApp\" "
+"payment method."
+msgstr ""
+
+#: includes/class-pv-product-fields.php:56
+msgid "Enable personalized purchase"
+msgstr ""
+
+#: includes/class-pv-product-fields.php:57
+msgid "Show customization fields on the product page."
+msgstr ""
+
+#: includes/class-pv-product-fields.php:64
+msgid "Define which fields will be requested from the customer."
+msgstr ""
+
+#: includes/class-pv-product-fields.php:69
+msgid "Fields visible to the customer:"
+msgstr ""
+
+#: includes/class-pv-product-fields.php:73
+msgid "required"
+msgstr ""
+
+#: includes/class-pv-whatsapp-gateway.php:25
+#: includes/class-pv-whatsapp-gateway.php:40
+#: includes/class-pv-whatsapp-gateway.php:45
+msgid "WhatsApp Order"
+msgstr ""
+
+#: includes/class-pv-whatsapp-gateway.php:30
+#, php-format
+msgid "WhatsApp Order <span class=\"count\">(%s)</span>"
+msgstr ""
+
+#: includes/class-pv-whatsapp-gateway.php:113
+msgid "Confirm via WhatsApp"
+msgstr ""
+
+#: includes/class-pv-whatsapp-gateway.php:114
+msgid "Click to send your order summary through WhatsApp."
+msgstr ""
+
+#: includes/class-pv-whatsapp-gateway.php:133
+msgid "Customer details"
+msgstr ""
+
+#: includes/class-pv-whatsapp-gateway.php:136
+msgid "Name"
+msgstr ""
+
+#: includes/class-pv-whatsapp-gateway.php:140
+msgid "WhatsApp"
+msgstr ""
+
+#: includes/class-pv-whatsapp-gateway.php:143
+msgid "Email"
+msgstr ""
+
+#: includes/class-pv-whatsapp-gateway.php:147
+msgid "Shipping"
+msgstr ""
+
+#: includes/class-pv-whatsapp-gateway.php:174
+msgid "Address"
+msgstr ""
+
+#: includes/class-pv-whatsapp-gateway.php:178
+msgid "Payment"
+msgstr ""
+
+#: includes/class-pv-whatsapp-gateway.php:192
+msgid "Order from checkout"
+msgstr ""
+
+#: includes/class-pv-whatsapp-gateway.php:193
+msgid "Order"
+msgstr ""
+
+#: includes/class-pv-whatsapp-gateway.php:282
+msgid ""
+"Creates the order in WooCommerce and opens WhatsApp with the summary for "
+"confirmation."
+msgstr ""
+
+#: includes/class-pv-whatsapp-gateway.php:290
+msgid "Finish your order and confirm via WhatsApp."
+msgstr ""
+
+#: includes/class-pv-whatsapp-gateway.php:300
+msgid "Enable/Disable"
+msgstr ""
+
+#: includes/class-pv-whatsapp-gateway.php:302
+msgid "Enable \"Order via WhatsApp\""
+msgstr ""
+
+#: includes/class-pv-whatsapp-gateway.php:306
+msgid "Title"
+msgstr ""
+
+#: includes/class-pv-whatsapp-gateway.php:308
+msgid "Title shown to customers at checkout."
+msgstr ""
+
+#: includes/class-pv-whatsapp-gateway.php:313
+msgid "Description"
+msgstr ""
+
+#: includes/class-pv-whatsapp-gateway.php:315
+msgid "Text visible to the customer at checkout."
+msgstr ""
+
+#: includes/class-pv-whatsapp-gateway.php:316
+#: includes/class-pv-whatsapp-gateway.php:460
+#: assets/js/pv-whatsapp-blocks.js:18
+msgid "We will contact you via WhatsApp to confirm payment and production."
+msgstr ""
+
+#: includes/class-pv-whatsapp-gateway.php:332
+msgid "Preferred payment method *"
+msgstr ""
+
+#: includes/class-pv-whatsapp-gateway.php:347
+#: includes/class-pv-whatsapp-gateway.php:372
+msgid "This method is disabled in Cart2Chat > General."
+msgstr ""
+
+#: includes/class-pv-whatsapp-gateway.php:362
+msgid "Select a payment method to continue with the WhatsApp order."
+msgstr ""
+
+#: includes/class-pv-whatsapp-gateway.php:402
+msgid "Order created from checkout with WhatsApp method."
+msgstr ""

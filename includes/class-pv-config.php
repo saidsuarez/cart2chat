@@ -16,65 +16,8 @@ class PV_Config
     public static function get_default_catalog(): array
     {
         return [
-            'product_types' => [
-                'registro_veterinario'    => self::t('Veterinary Record'),
-                'bitacora_lectura'        => self::t('Reading Journal'),
-                'poster'                  => self::t('Poster'),
-                'bolso_personalizado'     => self::t('Custom Tote Bag'),
-                'camiseta_personalizada'  => self::t('Custom T-Shirt'),
-                'boton'                   => self::t('Button'),
-                'pin'                     => self::t('Pin'),
-            ],
-            'product_fields' => [
-                'registro_veterinario' => [
-                    ['key' => 'nombre_mascota', 'label' => self::t('Pet name'), 'type' => 'text', 'required' => true],
-                    ['key' => 'portada_origen', 'label' => self::t('How do you want to define the cover?'), 'type' => 'select', 'required' => true, 'options' => ['foto_final' => self::t('Upload the photo for the cover'), 'referencia_ia' => self::t('Upload a reference image so Cart2Chat can create the cover with AI')]],
-                    ['key' => 'foto_portada', 'label' => self::t('Cover photo'), 'type' => 'file', 'required' => true, 'required_if' => ['portada_origen' => 'foto_final']],
-                    ['key' => 'imagen_referencia', 'label' => self::t('Reference image'), 'type' => 'file', 'required' => true, 'required_if' => ['portada_origen' => 'referencia_ia']],
-                    ['key' => 'estilo_portada_ia', 'label' => self::t('Cover style'), 'type' => 'select', 'required' => true, 'required_if' => ['portada_origen' => 'referencia_ia'], 'options' => ['realista' => self::t('Realistic'), 'cute' => self::t('Cute'), 'anime' => self::t('Anime'), 'disney_pixar' => self::t('Disney Pixar'), 'crochet' => self::t('Crochet')]],
-                    ['key' => 'escenario_portada', 'label' => self::t('Cover scene or ideas'), 'type' => 'textarea', 'required' => true, 'required_if' => ['portada_origen' => 'referencia_ia']],
-                    ['key' => 'comentarios', 'label' => self::t('Additional comments'), 'type' => 'textarea', 'required' => false],
-                ],
-                'bitacora_lectura' => [
-                    ['key' => 'nombre_propietario', 'label' => self::t('Owner name'), 'type' => 'text', 'required' => true],
-                    ['key' => 'nivel_lector', 'label' => self::t('Reading level'), 'type' => 'select', 'required' => true, 'options' => [self::t('Beginner'), self::t('Intermediate'), self::t('Advanced')]],
-                    ['key' => 'color_portada', 'label' => self::t('Cover color'), 'type' => 'text', 'required' => false],
-                    ['key' => 'comentarios', 'label' => self::t('Additional comments'), 'type' => 'textarea', 'required' => false],
-                ],
-                'poster' => [
-                    ['key' => 'tamano', 'label' => self::t('Size'), 'type' => 'select', 'required' => true, 'options' => ['A4', 'A3', '50x70 cm', '70x100 cm']],
-                    ['key' => 'orientacion', 'label' => self::t('Orientation'), 'type' => 'select', 'required' => true, 'options' => [self::t('Vertical'), self::t('Horizontal')]],
-                    ['key' => 'frase', 'label' => self::t('Main phrase or text'), 'type' => 'text', 'required' => false],
-                    ['key' => 'acabado', 'label' => self::t('Finish'), 'type' => 'select', 'required' => false, 'options' => [self::t('Matte'), self::t('Glossy')]],
-                    ['key' => 'comentarios', 'label' => self::t('Additional comments'), 'type' => 'textarea', 'required' => false],
-                ],
-                'bolso_personalizado' => [
-                    ['key' => 'material', 'label' => self::t('Material'), 'type' => 'select', 'required' => true, 'options' => [self::t('Canvas'), self::t('Cotton'), self::t('Polyester')]],
-                    ['key' => 'color_bolso', 'label' => self::t('Bag color'), 'type' => 'text', 'required' => true],
-                    ['key' => 'tipo_estampado', 'label' => self::t('Print type'), 'type' => 'select', 'required' => true, 'options' => [self::t('Text'), self::t('Image'), self::t('Mixed')]],
-                    ['key' => 'comentarios', 'label' => self::t('Additional comments'), 'type' => 'textarea', 'required' => false],
-                ],
-                'camiseta_personalizada' => [
-                    ['key' => 'talla', 'label' => self::t('Size'), 'type' => 'select', 'required' => true, 'options' => ['XS', 'S', 'M', 'L', 'XL', 'XXL']],
-                    ['key' => 'color_camiseta', 'label' => self::t('Shirt color'), 'type' => 'text', 'required' => true],
-                    ['key' => 'tipo_estampado', 'label' => self::t('Print type'), 'type' => 'select', 'required' => true, 'options' => [self::t('Front'), self::t('Back'), self::t('Both sides')]],
-                    ['key' => 'nombre_estampado', 'label' => self::t('Text for print'), 'type' => 'text', 'required' => false],
-                    ['key' => 'comentarios', 'label' => self::t('Additional comments'), 'type' => 'textarea', 'required' => false],
-                ],
-                'boton' => [
-                    ['key' => 'diametro_mm', 'label' => self::t('Diameter (mm)'), 'type' => 'number', 'required' => true],
-                    ['key' => 'cantidad', 'label' => self::t('Quantity'), 'type' => 'number', 'required' => true],
-                    ['key' => 'acabado', 'label' => self::t('Finish'), 'type' => 'select', 'required' => false, 'options' => [self::t('Matte'), self::t('Glossy')]],
-                    ['key' => 'comentarios', 'label' => self::t('Additional comments'), 'type' => 'textarea', 'required' => false],
-                ],
-                'pin' => [
-                    ['key' => 'tipo_pin', 'label' => self::t('Pin type'), 'type' => 'select', 'required' => true, 'options' => [self::t('Metal'), self::t('Acrylic'), 'PVC']],
-                    ['key' => 'ancho_cm', 'label' => self::t('Width (cm)'), 'type' => 'number', 'required' => true],
-                    ['key' => 'alto_cm', 'label' => self::t('Height (cm)'), 'type' => 'number', 'required' => true],
-                    ['key' => 'cantidad', 'label' => self::t('Quantity'), 'type' => 'number', 'required' => true],
-                    ['key' => 'comentarios', 'label' => self::t('Additional comments'), 'type' => 'textarea', 'required' => false],
-                ],
-            ],
+            'product_types' => [],
+            'product_fields' => [],
             'payment_methods' => [
                 'transferencia_bancolombia' => self::t('Bank transfer (Bancolombia)'),
                 'llave'                     => self::t('Llave'),

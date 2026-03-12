@@ -73,54 +73,43 @@ class PV_Order_Control
 
     public static function register_settings(): void
     {
+        $defaults = self::get_default_settings();
         register_setting('pv_settings_group', 'pv_settings', [
             'type'              => 'array',
             'sanitize_callback' => [__CLASS__, 'sanitize_settings'],
-            'default'           => [
-                'usage_mode' => 'both',
-                'whatsapp_number' => '',
-                'default_message' => __('Hi Cart2Chat, I want to place this order:', PV_TEXT_DOMAIN),
-                'closing_message' => __('Thank you. I am available to confirm.', PV_TEXT_DOMAIN),
-                'design_style' => 'modern',
-                'design_theme' => 'light',
-                'button_color' => '#25d366',
-                'button_text_color' => '#ffffff',
-                'show_whatsapp_icon' => true,
-                'product_button_text' => __('Order via WhatsApp', PV_TEXT_DOMAIN),
-                'checkout_button_text' => __('Send order via WhatsApp', PV_TEXT_DOMAIN),
-                'whatsapp_form_fields' => self::get_default_whatsapp_form_fields(),
-            ],
+            'default'           => $defaults,
         ]);
     }
 
     public static function sanitize_settings(array $input): array
     {
+        $defaults = self::get_default_settings();
         $existing = get_option('pv_settings', []);
         if (!is_array($existing)) {
             $existing = [];
         }
 
-        $usage_mode = isset($input['usage_mode']) ? sanitize_key((string) $input['usage_mode']) : (string) ($existing['usage_mode'] ?? 'both');
+        $usage_mode = isset($input['usage_mode']) ? sanitize_key((string) $input['usage_mode']) : (string) ($existing['usage_mode'] ?? $defaults['usage_mode']);
         if (!array_key_exists($usage_mode, self::get_usage_mode_options())) {
             $usage_mode = 'both';
         }
 
-        $design_style = isset($input['design_style']) ? sanitize_key((string) $input['design_style']) : (string) ($existing['design_style'] ?? 'modern');
+        $design_style = isset($input['design_style']) ? sanitize_key((string) $input['design_style']) : (string) ($existing['design_style'] ?? $defaults['design_style']);
         if (!in_array($design_style, ['flat', 'modern'], true)) {
             $design_style = 'modern';
         }
 
-        $design_theme = isset($input['design_theme']) ? sanitize_key((string) $input['design_theme']) : (string) ($existing['design_theme'] ?? 'light');
+        $design_theme = isset($input['design_theme']) ? sanitize_key((string) $input['design_theme']) : (string) ($existing['design_theme'] ?? $defaults['design_theme']);
         if (!in_array($design_theme, ['light', 'dark'], true)) {
             $design_theme = 'light';
         }
 
-        $button_color = isset($input['button_color']) ? sanitize_hex_color((string) $input['button_color']) : sanitize_hex_color((string) ($existing['button_color'] ?? '#25d366'));
+        $button_color = isset($input['button_color']) ? sanitize_hex_color((string) $input['button_color']) : sanitize_hex_color((string) ($existing['button_color'] ?? $defaults['button_color']));
         if (!$button_color) {
             $button_color = '#25d366';
         }
 
-        $button_text_color = isset($input['button_text_color']) ? sanitize_hex_color((string) $input['button_text_color']) : sanitize_hex_color((string) ($existing['button_text_color'] ?? '#ffffff'));
+        $button_text_color = isset($input['button_text_color']) ? sanitize_hex_color((string) $input['button_text_color']) : sanitize_hex_color((string) ($existing['button_text_color'] ?? $defaults['button_text_color']));
         if (!$button_text_color) {
             $button_text_color = '#ffffff';
         }
@@ -138,13 +127,13 @@ class PV_Order_Control
         } else {
             $show_whatsapp_icon = !empty($existing['show_whatsapp_icon']);
         }
-        $product_button_text = isset($input['product_button_text']) ? sanitize_text_field((string) $input['product_button_text']) : (string) ($existing['product_button_text'] ?? __('Order via WhatsApp', PV_TEXT_DOMAIN));
+        $product_button_text = isset($input['product_button_text']) ? sanitize_text_field((string) $input['product_button_text']) : (string) ($existing['product_button_text'] ?? $defaults['product_button_text']);
         if ($product_button_text === '') {
-            $product_button_text = __('Order via WhatsApp', PV_TEXT_DOMAIN);
+            $product_button_text = (string) $defaults['product_button_text'];
         }
-        $checkout_button_text = isset($input['checkout_button_text']) ? sanitize_text_field((string) $input['checkout_button_text']) : (string) ($existing['checkout_button_text'] ?? __('Send order via WhatsApp', PV_TEXT_DOMAIN));
+        $checkout_button_text = isset($input['checkout_button_text']) ? sanitize_text_field((string) $input['checkout_button_text']) : (string) ($existing['checkout_button_text'] ?? $defaults['checkout_button_text']);
         if ($checkout_button_text === '') {
-            $checkout_button_text = __('Send order via WhatsApp', PV_TEXT_DOMAIN);
+            $checkout_button_text = (string) $defaults['checkout_button_text'];
         }
 
         if (array_key_exists('whatsapp_form_fields', $input)) {
@@ -205,8 +194,8 @@ class PV_Order_Control
             'whatsapp_number' => isset($input['whatsapp_number'])
                 ? preg_replace('/[^0-9]/', '', (string) $input['whatsapp_number'])
                 : (isset($existing['whatsapp_number']) ? preg_replace('/[^0-9]/', '', (string) $existing['whatsapp_number']) : ''),
-            'default_message' => isset($input['default_message']) ? sanitize_text_field((string) $input['default_message']) : (string) ($existing['default_message'] ?? ''),
-            'closing_message' => isset($input['closing_message']) ? sanitize_text_field((string) $input['closing_message']) : (string) ($existing['closing_message'] ?? ''),
+            'default_message' => isset($input['default_message']) ? sanitize_text_field((string) $input['default_message']) : (string) ($existing['default_message'] ?? $defaults['default_message']),
+            'closing_message' => isset($input['closing_message']) ? sanitize_text_field((string) $input['closing_message']) : (string) ($existing['closing_message'] ?? $defaults['closing_message']),
             'design_style' => $design_style,
             'design_theme' => $design_theme,
             'button_color' => $button_color,
@@ -215,6 +204,24 @@ class PV_Order_Control
             'product_button_text' => $product_button_text,
             'checkout_button_text' => $checkout_button_text,
             'whatsapp_form_fields' => $fields,
+        ];
+    }
+
+    public static function get_default_settings(): array
+    {
+        return [
+            'usage_mode' => 'both',
+            'whatsapp_number' => '',
+            'default_message' => __('Hi Cart2Chat, I want to place this order:', PV_TEXT_DOMAIN),
+            'closing_message' => __('Thank you. I am available to confirm.', PV_TEXT_DOMAIN),
+            'design_style' => 'modern',
+            'design_theme' => 'light',
+            'button_color' => '#25d366',
+            'button_text_color' => '#ffffff',
+            'show_whatsapp_icon' => true,
+            'product_button_text' => __('Order via WhatsApp', PV_TEXT_DOMAIN),
+            'checkout_button_text' => __('Send order via WhatsApp', PV_TEXT_DOMAIN),
+            'whatsapp_form_fields' => self::get_default_whatsapp_form_fields(),
         ];
     }
 
@@ -1389,24 +1396,6 @@ class PV_Order_Control
         return [
             ['key' => 'name', 'label' => __('Full name', PV_TEXT_DOMAIN), 'type' => 'text', 'required' => true],
             ['key' => 'whatsapp', 'label' => 'WhatsApp', 'type' => 'tel', 'required' => true],
-            ['key' => 'email', 'label' => 'Email', 'type' => 'email', 'required' => false],
-            ['key' => 'city', 'label' => __('City', PV_TEXT_DOMAIN), 'type' => 'text', 'required' => true],
-            ['key' => 'department', 'label' => __('State/Department', PV_TEXT_DOMAIN), 'type' => 'text', 'required' => true],
-            ['key' => 'address', 'label' => __('Shipping address', PV_TEXT_DOMAIN), 'type' => 'text', 'required' => true],
-            ['key' => 'shipping_notes', 'label' => __('Shipping notes', PV_TEXT_DOMAIN), 'type' => 'textarea', 'required' => false],
-            [
-                'key' => 'payment_method',
-                'label' => __('Payment method', PV_TEXT_DOMAIN),
-                'type' => 'select',
-                'required' => true,
-                'options' => [
-                    'transferencia_bancolombia' => __('Bank transfer (Bancolombia)', PV_TEXT_DOMAIN),
-                    'llave'                     => __('Llave', PV_TEXT_DOMAIN),
-                    'nequi'                     => __('Nequi', PV_TEXT_DOMAIN),
-                    'daviplata'                 => __('Daviplata', PV_TEXT_DOMAIN),
-                    'link_pago_tarjeta'         => __('Payment link (credit card)', PV_TEXT_DOMAIN),
-                ],
-            ],
         ];
     }
 

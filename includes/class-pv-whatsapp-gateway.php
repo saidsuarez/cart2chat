@@ -37,15 +37,23 @@ class PV_WhatsApp_Gateway_Manager
         foreach ($statuses as $key => $label) {
             $new_statuses[$key] = $label;
             if ($key === 'wc-pending') {
-                $new_statuses['wc-pv-whatsapp'] = __('WhatsApp Order', PV_TEXT_DOMAIN);
+                $new_statuses['wc-pv-whatsapp'] = self::tr('WhatsApp Order');
             }
         }
 
         if (!isset($new_statuses['wc-pv-whatsapp'])) {
-            $new_statuses['wc-pv-whatsapp'] = __('WhatsApp Order', PV_TEXT_DOMAIN);
+            $new_statuses['wc-pv-whatsapp'] = self::tr('WhatsApp Order');
         }
 
         return $new_statuses;
+    }
+
+    private static function tr(string $text): string
+    {
+        if (did_action('init')) {
+            return __($text, PV_TEXT_DOMAIN);
+        }
+        return $text;
     }
 
     public static function register_gateway(array $gateways): array
@@ -275,19 +283,27 @@ class PV_WhatsApp_Gateway_Manager
 if (class_exists('WC_Payment_Gateway')) {
     class PV_WC_Gateway_WhatsApp extends WC_Payment_Gateway
     {
+        private static function tr(string $text): string
+        {
+            if (did_action('init')) {
+                return __($text, PV_TEXT_DOMAIN);
+            }
+            return $text;
+        }
+
         public function __construct()
         {
             $this->id                 = 'pv_whatsapp';
-            $this->method_title       = __('Order via WhatsApp', PV_TEXT_DOMAIN);
-            $this->method_description = __('Creates the order in WooCommerce and opens WhatsApp with the summary for confirmation.', PV_TEXT_DOMAIN);
+            $this->method_title       = self::tr('Order via WhatsApp');
+            $this->method_description = self::tr('Creates the order in WooCommerce and opens WhatsApp with the summary for confirmation.');
             $this->has_fields         = true;
             $this->supports           = ['products'];
 
             $this->init_form_fields();
             $this->init_settings();
 
-            $this->title       = (string) $this->get_option('title', __('Order via WhatsApp', PV_TEXT_DOMAIN));
-            $this->description = (string) $this->get_option('description', __('Finish your order and confirm via WhatsApp.', PV_TEXT_DOMAIN));
+            $this->title       = (string) $this->get_option('title', self::tr('Order via WhatsApp'));
+            $this->description = (string) $this->get_option('description', self::tr('Finish your order and confirm via WhatsApp.'));
             $this->enabled     = (string) $this->get_option('enabled', 'yes');
 
             add_action('woocommerce_update_options_payment_gateways_' . $this->id, [$this, 'process_admin_options']);
@@ -297,23 +313,23 @@ if (class_exists('WC_Payment_Gateway')) {
         {
             $this->form_fields = [
                 'enabled' => [
-                    'title'   => __('Enable/Disable', PV_TEXT_DOMAIN),
+                    'title'   => self::tr('Enable/Disable'),
                     'type'    => 'checkbox',
-                    'label'   => __('Enable "Order via WhatsApp"', PV_TEXT_DOMAIN),
+                    'label'   => self::tr('Enable "Order via WhatsApp"'),
                     'default' => 'yes',
                 ],
                 'title' => [
-                    'title'       => __('Title', PV_TEXT_DOMAIN),
+                    'title'       => self::tr('Title'),
                     'type'        => 'text',
-                    'description' => __('Title shown to customers at checkout.', PV_TEXT_DOMAIN),
-                    'default'     => __('Order via WhatsApp', PV_TEXT_DOMAIN),
+                    'description' => self::tr('Title shown to customers at checkout.'),
+                    'default'     => self::tr('Order via WhatsApp'),
                     'desc_tip'    => true,
                 ],
                 'description' => [
-                    'title'       => __('Description', PV_TEXT_DOMAIN),
+                    'title'       => self::tr('Description'),
                     'type'        => 'textarea',
-                    'description' => __('Text visible to the customer at checkout.', PV_TEXT_DOMAIN),
-                    'default'     => __('We will contact you via WhatsApp to confirm payment and production.', PV_TEXT_DOMAIN),
+                    'description' => self::tr('Text visible to the customer at checkout.'),
+                    'default'     => self::tr('We will contact you via WhatsApp to confirm payment and production.'),
                 ],
             ];
         }

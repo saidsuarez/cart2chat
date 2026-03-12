@@ -405,18 +405,6 @@ class PV_Checkout_Flow
         return [
             ['key' => 'name', 'label' => __('Full name', PV_TEXT_DOMAIN), 'type' => 'text', 'required' => true],
             ['key' => 'whatsapp', 'label' => 'WhatsApp', 'type' => 'tel', 'required' => true],
-            ['key' => 'email', 'label' => 'Email', 'type' => 'email', 'required' => false],
-            ['key' => 'city', 'label' => __('City', PV_TEXT_DOMAIN), 'type' => 'text', 'required' => true],
-            ['key' => 'department', 'label' => __('State/Department', PV_TEXT_DOMAIN), 'type' => 'text', 'required' => true],
-            ['key' => 'address', 'label' => __('Shipping address', PV_TEXT_DOMAIN), 'type' => 'text', 'required' => true],
-            ['key' => 'shipping_notes', 'label' => __('Shipping notes', PV_TEXT_DOMAIN), 'type' => 'textarea', 'required' => false],
-            ['key' => 'payment_method', 'label' => __('Payment method', PV_TEXT_DOMAIN), 'type' => 'select', 'required' => true, 'options' => [
-                'transferencia_bancolombia' => __('Bank transfer (Bancolombia)', PV_TEXT_DOMAIN),
-                'llave'                     => __('Llave', PV_TEXT_DOMAIN),
-                'nequi'                     => __('Nequi', PV_TEXT_DOMAIN),
-                'daviplata'                 => __('Daviplata', PV_TEXT_DOMAIN),
-                'link_pago_tarjeta'         => __('Payment link (credit card)', PV_TEXT_DOMAIN),
-            ]],
         ];
     }
 

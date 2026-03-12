@@ -1,0 +1,11 @@
+{
+  "name": "cart2chat-woocommerce-whatsapp-orders",
+  "version": "0.1.1",
+  "private": true,
+  "description": "Cart2Chat versioning utilities",
+  "license": "GPL-2.0-or-later",
+  "scripts": {
+    "version:sync": "node scripts/sync-version.mjs",
+    "version": "npm run version:sync && git add cart2chat.php readme.txt"
+  }
+}

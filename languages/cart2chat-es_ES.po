@@ -5,6 +5,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+msgid "Cart2Chat - WooCommerce WhatsApp Orders"
+msgstr "Cart2Chat - Pedidos por WhatsApp para WooCommerce"
+
+msgid ""
+"Custom product fields, personalized order flows, and WhatsApp order "
+"management for WooCommerce."
+msgstr ""
+"Campos de producto personalizados, flujos de pedido personalizados y gestión "
+"de pedidos por WhatsApp para WooCommerce."
+
 msgid ""
 "This page is a practical guide for store owners using Cart2Chat day to day."
 msgstr ""

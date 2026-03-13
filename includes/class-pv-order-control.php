@@ -636,9 +636,10 @@ class PV_Order_Control
         if (!current_user_can('manage_woocommerce')) {
             return;
         }
-        $locale = function_exists('determine_locale') ? (string) determine_locale() : (string) get_locale();
+        $locale = (string) get_locale();
         $is_spanish = strpos(strtolower($locale), 'es_') === 0 || strtolower($locale) === 'es';
         $support_email = $is_spanish ? 'soporte@pinxel.co' : 'support@pinxel.co';
+        $support_label = $is_spanish ? 'Correo de soporte:' : 'Support email:';
         ?>
         <?php if (!$embedded) : ?>
         <div class="wrap">
@@ -713,7 +714,7 @@ class PV_Order_Control
             <h2><?php echo esc_html__('9. Developer and support', PV_TEXT_DOMAIN); ?></h2>
             <p>
                 <?php echo esc_html__('Developed by Pinxel.', PV_TEXT_DOMAIN); ?><br>
-                <?php echo esc_html__('Support email:', PV_TEXT_DOMAIN); ?> <a href="mailto:<?php echo esc_attr($support_email); ?>"><?php echo esc_html($support_email); ?></a><br>
+                <?php echo esc_html($support_label); ?> <a href="mailto:<?php echo esc_attr($support_email); ?>"><?php echo esc_html($support_email); ?></a><br>
                 <?php echo esc_html__('If you want to support the developer with a donation, you can do it via PayPal.', PV_TEXT_DOMAIN); ?>
             </p>
         <?php if (!$embedded) : ?>

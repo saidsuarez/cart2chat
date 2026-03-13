@@ -12,7 +12,6 @@ It supports:
 
 ## Plugin Info
 - Name: `Cart2Chat - WooCommerce WhatsApp Orders`
-- Version: `0.1.0`
 - Author: `Pinxel`
 - Text domain: `cart2chat`
 

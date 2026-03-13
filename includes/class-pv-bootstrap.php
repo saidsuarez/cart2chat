@@ -61,7 +61,9 @@ class PV_Bootstrap
         $settings = get_option('pv_settings', []);
         if (is_array($settings) && self::looks_like_legacy_default_settings($settings)) {
             update_option('pv_settings', PV_Order_Control::get_default_settings());
+            $settings = get_option('pv_settings', []);
         }
+        self::maybe_localize_unmodified_defaults($settings);
 
         $catalog = get_option('pv_catalog_config', []);
         if (is_array($catalog) && self::looks_like_legacy_default_catalog($catalog)) {
@@ -126,10 +128,61 @@ class PV_Bootstrap
             && isset($fields['registro_veterinario']);
     }
 
+    private static function maybe_localize_unmodified_defaults($settings): void
+    {
+        if (!is_array($settings)) {
+            return;
+        }
+
+        $target_spanish = self::is_spanish_locale();
+        $target = self::build_settings_defaults($target_spanish);
+        $english = self::build_settings_defaults(false);
+        $spanish = self::build_settings_defaults(true);
+
+        if ($target_spanish && self::is_same_settings_payload($settings, $english)) {
+            update_option('pv_settings', $target);
+            return;
+        }
+
+        if (!$target_spanish && self::is_same_settings_payload($settings, $spanish)) {
+            update_option('pv_settings', $target);
+        }
+    }
+
+    private static function is_same_settings_payload(array $a, array $b): bool
+    {
+        $keys = [
+            'usage_mode',
+            'whatsapp_number',
+            'default_message',
+            'closing_message',
+            'design_style',
+            'design_theme',
+            'button_color',
+            'button_text_color',
+            'show_whatsapp_icon',
+            'product_button_text',
+            'checkout_button_text',
+            'whatsapp_form_fields',
+        ];
+
+        foreach ($keys as $key) {
+            $av = $a[$key] ?? null;
+            $bv = $b[$key] ?? null;
+            if ($av !== $bv) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     private static function get_activation_settings_defaults(): array
     {
-        $is_spanish = self::is_spanish_locale();
+        return self::build_settings_defaults(self::is_spanish_locale());
+    }
 
+    private static function build_settings_defaults(bool $is_spanish): array
+    {
         return [
             'usage_mode' => 'both',
             'whatsapp_number' => '',
@@ -172,7 +225,10 @@ class PV_Bootstrap
 
     private static function is_spanish_locale(): bool
     {
-        $locale = function_exists('determine_locale') ? (string) determine_locale() : (string) get_locale();
+        $locale = (string) get_locale();
+        if ($locale === '' && function_exists('determine_locale')) {
+            $locale = (string) determine_locale();
+        }
         $locale = strtolower($locale);
         return strpos($locale, 'es_') === 0 || $locale === 'es';
     }

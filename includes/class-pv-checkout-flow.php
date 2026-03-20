@@ -750,7 +750,7 @@ class PV_Checkout_Flow
 
         echo '<style id="pv-design-css">'
             . '.pv-customization-fields,.pv-wa-order,#pv-mode-wrap{border-radius:' . esc_attr($radius) . ';background:' . esc_attr($container_bg) . ';border-color:' . esc_attr($container_border) . ';color:' . esc_attr($text_color) . ';}'
-            . '.pv-customization-fields{margin:20px 0;padding:16px;border:1px solid ' . esc_attr($container_border) . ';}'
+            . '.pv-customization-fields{margin:20px 0;padding:16px;border:1px solid ' . esc_attr($container_border) . ';width:100%;flex:0 0 100%;}'
             . '.pv-customization-title{margin:0 0 12px;}'
             . '.pv-mode-wrap{display:none;margin-bottom:14px;padding:10px;border:1px dashed ' . esc_attr($container_border) . ';}'
             . '.pv-mode-title{display:block;margin-bottom:8px;}'
@@ -776,7 +776,8 @@ class PV_Checkout_Flow
             . '.pv-wa-payment-option{margin-top:10px;}'
             . '.pv-wa-payment-option select{width:100%;}'
             . '.woocommerce.single-product div.product form.cart .quantity input.qty{width:5rem;min-width:5rem;text-align:center;}'
-            . ':is(.elementor-widget-woocommerce-product-add-to-cart,.woocommerce div.product .elementor-widget-woocommerce-product-add-to-cart,.elementor-widget-wc-add-to-cart,.woocommerce div.product .elementor-widget-wc-add-to-cart) form.cart.variations_form .woocommerce-variation-add-to-cart,:is(.elementor-widget-woocommerce-product-add-to-cart,.woocommerce div.product .elementor-widget-woocommerce-product-add-to-cart,.elementor-widget-wc-add-to-cart,.woocommerce div.product .elementor-widget-wc-add-to-cart) form.cart:not(.grouped_form):not(.variations_form){flex-wrap:wrap;align-items:flex-start;}'
+            . '.woocommerce.single-product div.product form.cart:not(.grouped_form):not(.variations_form){display:flex;flex-wrap:wrap;align-items:flex-start;column-gap:12px;row-gap:12px;}'
+            . ':is(.elementor-widget-woocommerce-product-add-to-cart,.woocommerce div.product .elementor-widget-woocommerce-product-add-to-cart,.elementor-widget-wc-add-to-cart,.woocommerce div.product .elementor-widget-wc-add-to-cart) form.cart.variations_form .woocommerce-variation-add-to-cart,:is(.elementor-widget-woocommerce-product-add-to-cart,.woocommerce div.product .elementor-widget-woocommerce-product-add-to-cart,.elementor-widget-wc-add-to-cart,.woocommerce div.product .elementor-widget-wc-add-to-cart) form.cart:not(.grouped_form):not(.variations_form){display:flex;flex-wrap:wrap;align-items:flex-start;column-gap:12px;row-gap:12px;}'
             . '.pv-wa-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}'
             . '.pv-wa-field{margin:0;}'
             . '.pv-wa-field .pv-wa-label,.pv-customization-fields label{display:block;margin-bottom:6px;}'
@@ -786,7 +787,7 @@ class PV_Checkout_Flow
             . '.pv-wa-order .pv-wa-btn:hover,.pv-wa-btn:hover{opacity:.92;}'
             . '.pv-wa-btn .pv-wa-btn-content{display:inline-flex;align-items:center;gap:.45em;}'
             . '.pv-wa-btn .pv-wa-btn-icon-img{display:block;width:1em;height:1em;flex:0 0 1em;}'
-            . '@media (max-width: 768px){.pv-wa-grid{grid-template-columns:1fr;}}'
+            . '@media (max-width: 768px){.pv-wa-grid{grid-template-columns:1fr;}.woocommerce.single-product div.product form.cart .pv-wa-inline{display:block;width:100%;margin-left:0;margin-top:10px;}.woocommerce.single-product div.product form.cart .pv-wa-inline .pv-wa-btn{display:block;width:100%;}}'
             . $custom_css
             . '</style>';
     }

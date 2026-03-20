@@ -750,6 +750,18 @@ msgstr ""
 msgid "Support email:"
 msgstr ""
 
+#: includes/class-pv-order-control.php:274
+msgid "Custom CSS for Cart2Chat"
+msgstr ""
+
+#: includes/class-pv-order-control.php:337
+msgid "Custom CSS"
+msgstr ""
+
+#: includes/class-pv-order-control.php:339
+msgid "Optional. Add extra CSS rules to fine-tune Cart2Chat styles on the frontend."
+msgstr ""
+
 #: includes/class-pv-order-control.php:711
 msgid "If you want to support the developer with a donation, you can do it via PayPal."
 msgstr ""

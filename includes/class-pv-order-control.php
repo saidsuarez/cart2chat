@@ -135,6 +135,9 @@ class PV_Order_Control
         if ($checkout_button_text === '') {
             $checkout_button_text = (string) $defaults['checkout_button_text'];
         }
+        $custom_css = isset($input['custom_css'])
+            ? trim((string) wp_strip_all_tags((string) $input['custom_css']))
+            : (string) ($existing['custom_css'] ?? $defaults['custom_css']);
 
         if (array_key_exists('whatsapp_form_fields', $input)) {
             $fields = [];
@@ -203,6 +206,7 @@ class PV_Order_Control
             'show_whatsapp_icon' => $show_whatsapp_icon,
             'product_button_text' => $product_button_text,
             'checkout_button_text' => $checkout_button_text,
+            'custom_css' => $custom_css,
             'whatsapp_form_fields' => $fields,
         ];
     }
@@ -221,6 +225,7 @@ class PV_Order_Control
             'show_whatsapp_icon' => true,
             'product_button_text' => __('Order via WhatsApp', PV_TEXT_DOMAIN),
             'checkout_button_text' => __('Send order via WhatsApp', PV_TEXT_DOMAIN),
+            'custom_css' => '',
             'whatsapp_form_fields' => self::get_default_whatsapp_form_fields(),
         ];
     }
@@ -229,6 +234,13 @@ class PV_Order_Control
     {
         if (!current_user_can('manage_woocommerce')) {
             return;
+        }
+
+        $editor_settings = false;
+        if (function_exists('wp_enqueue_code_editor')) {
+            $editor_settings = wp_enqueue_code_editor(['type' => 'text/css']);
+            wp_enqueue_script('wp-theme-plugin-editor');
+            wp_enqueue_style('code-editor');
         }
 
         $settings = get_option('pv_settings', []);
@@ -256,6 +268,10 @@ class PV_Order_Control
         $checkout_button_text = sanitize_text_field((string) ($settings['checkout_button_text'] ?? __('Send order via WhatsApp', PV_TEXT_DOMAIN)));
         if ($checkout_button_text === '') {
             $checkout_button_text = __('Send order via WhatsApp', PV_TEXT_DOMAIN);
+        }
+        $custom_css = isset($settings['custom_css']) ? trim((string) $settings['custom_css']) : '';
+        if ($custom_css === '') {
+            $custom_css = "/* Custom CSS for Cart2Chat */\n";
         }
         ?>
         <?php if (!$embedded) : ?>
@@ -316,12 +332,27 @@ class PV_Order_Control
                                     <label for="pv_checkout_button_text"><strong><?php echo esc_html__('Checkout button text', PV_TEXT_DOMAIN); ?></strong></label><br>
                                     <input type="text" class="regular-text" name="pv_settings[checkout_button_text]" id="pv_checkout_button_text" value="<?php echo esc_attr($checkout_button_text); ?>">
                                 </p>
+                                <hr style="margin:14px 0;">
+                                <p style="margin:0;">
+                                    <label for="pv_custom_css"><strong><?php echo esc_html__('Custom CSS', PV_TEXT_DOMAIN); ?></strong></label><br>
+                                    <textarea name="pv_settings[custom_css]" id="pv_custom_css" class="large-text code" rows="12"><?php echo esc_textarea($custom_css); ?></textarea>
+                                    <span class="description"><?php echo esc_html__('Optional. Add extra CSS rules to fine-tune Cart2Chat styles on the frontend.', PV_TEXT_DOMAIN); ?></span>
+                                </p>
                             </td>
                         </tr>
                     </tbody>
                 </table>
                 <?php submit_button(__('Save design settings', PV_TEXT_DOMAIN)); ?>
             </form>
+            <?php if ($editor_settings) : ?>
+            <script>
+                jQuery(function($) {
+                    if (wp.codeEditor && $('#pv_custom_css').length) {
+                        wp.codeEditor.initialize($('#pv_custom_css'), <?php echo wp_json_encode($editor_settings); ?>);
+                    }
+                });
+            </script>
+            <?php endif; ?>
         <?php if (!$embedded) : ?>
         </div>
         <?php endif; ?>

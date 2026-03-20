@@ -723,6 +723,7 @@ class PV_Checkout_Flow
         if (!$button_text_color) {
             $button_text_color = '#ffffff';
         }
+        $custom_css = isset($settings['custom_css']) ? trim((string) $settings['custom_css']) : '';
 
         $radius = $design_style === 'flat' ? '0px' : '12px';
         $btn_bg = $button_color;
@@ -765,25 +766,28 @@ class PV_Checkout_Flow
             . '.pv-wa-order .description,.pv-customization-fields .description{color:' . esc_attr($muted_color) . ';}'
             . '.pv-wa-order-single{margin-top:14px;padding:12px;border:1px solid ' . esc_attr($container_border) . ';}'
             . '.pv-wa-order-cart{margin-top:18px;padding:14px;border:1px solid ' . esc_attr($container_border) . ';}'
-            . '.pv-wa-order-title{margin:0 0 8px;}'
+            . '.pv-wa-order-title{margin:0;}'
             . '.pv-wa-order-help{margin:0 0 10px;}'
-            . '.pv-wa-panel{display:none;margin-top:10px;}'
+            . '.pv-wa-panel{display:none;flex-direction:column;gap:12px;margin-top:10px;}'
             . '.woocommerce.single-product div.product form.cart .pv-wa-inline{display:inline-block;vertical-align:middle;margin-left:8px;}'
             . '.woocommerce.single-product div.product .pv-wa-order-single{margin-top:12px;min-width:320px;max-width:560px;}'
-            . '.pv-wa-submit{margin-top:8px;}'
+            . '.pv-wa-order .pv-wa-submit{display:inline-block;margin-top:0 !important;}'
             . '.pv-wa-errors{margin-top:8px;color:#b11;display:none;}'
             . '.pv-wa-payment-option{margin-top:10px;}'
             . '.pv-wa-payment-option select{width:100%;}'
             . '.woocommerce.single-product div.product form.cart .quantity input.qty{width:5rem;min-width:5rem;text-align:center;}'
+            . ':is(.elementor-widget-woocommerce-product-add-to-cart,.woocommerce div.product .elementor-widget-woocommerce-product-add-to-cart,.elementor-widget-wc-add-to-cart,.woocommerce div.product .elementor-widget-wc-add-to-cart) form.cart.variations_form .woocommerce-variation-add-to-cart,:is(.elementor-widget-woocommerce-product-add-to-cart,.woocommerce div.product .elementor-widget-woocommerce-product-add-to-cart,.elementor-widget-wc-add-to-cart,.woocommerce div.product .elementor-widget-wc-add-to-cart) form.cart:not(.grouped_form):not(.variations_form){flex-wrap:wrap;align-items:flex-start;}'
             . '.pv-wa-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}'
             . '.pv-wa-field{margin:0;}'
             . '.pv-wa-field .pv-wa-label,.pv-customization-fields label{display:block;margin-bottom:6px;}'
             . '.pv-wa-order .pv-wa-field input,.pv-wa-order .pv-wa-field select,.pv-wa-order .pv-wa-field textarea,.pv-customization-fields input,.pv-customization-fields select,.pv-customization-fields textarea{width:100%;border-radius:' . esc_attr($radius) . ';background:' . esc_attr($field_bg) . ';border:1px solid ' . esc_attr($field_border) . ';color:' . esc_attr($field_text) . ';}'
+            . '.pv-wa-order .pv-wa-field input[type="checkbox"],.pv-wa-order .pv-wa-field input[type="radio"],.pv-customization-fields input[type="checkbox"],.pv-customization-fields input[type="radio"]{width:auto;min-width:0;}'
             . '.woocommerce .button.pv-wa-btn,.woocommerce button.pv-wa-btn,.pv-wa-btn{background-color:' . esc_attr($btn_bg) . ' !important;border-color:' . esc_attr($btn_border) . ' !important;color:' . esc_attr($btn_text) . ' !important;}'
             . '.pv-wa-order .pv-wa-btn:hover,.pv-wa-btn:hover{opacity:.92;}'
             . '.pv-wa-btn .pv-wa-btn-content{display:inline-flex;align-items:center;gap:.45em;}'
             . '.pv-wa-btn .pv-wa-btn-icon-img{display:block;width:1em;height:1em;flex:0 0 1em;}'
             . '@media (max-width: 768px){.pv-wa-grid{grid-template-columns:1fr;}}'
+            . $custom_css
             . '</style>';
     }
 
@@ -826,7 +830,7 @@ class PV_Checkout_Flow
                             }
                             if (!activePanel) return;
                             var currentDisplay = window.getComputedStyle(activePanel).display;
-                            activePanel.style.display = currentDisplay === "none" ? "block" : "none";
+                            activePanel.style.display = currentDisplay === "none" ? "flex" : "none";
                         });
                     }
 

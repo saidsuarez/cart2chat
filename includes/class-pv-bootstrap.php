@@ -163,6 +163,7 @@ class PV_Bootstrap
             'show_whatsapp_icon',
             'product_button_text',
             'checkout_button_text',
+            'custom_css',
             'whatsapp_form_fields',
         ];
 
@@ -199,6 +200,7 @@ class PV_Bootstrap
             'show_whatsapp_icon' => true,
             'product_button_text' => $is_spanish ? 'Hacer pedido por WhatsApp' : 'Order via WhatsApp',
             'checkout_button_text' => $is_spanish ? 'Enviar pedido por WhatsApp' : 'Send order via WhatsApp',
+            'custom_css' => '',
             'whatsapp_form_fields' => [
                 ['key' => 'name', 'label' => $is_spanish ? 'Nombre completo' : 'Full name', 'type' => 'text', 'required' => true],
                 ['key' => 'whatsapp', 'label' => 'WhatsApp', 'type' => 'tel', 'required' => true],

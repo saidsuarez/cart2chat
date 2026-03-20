@@ -181,6 +181,15 @@ msgstr "Desarrollado por Pinxel."
 msgid "Support email:"
 msgstr "Correo de soporte:"
 
+msgid "Custom CSS for Cart2Chat"
+msgstr "CSS personalizado para Cart2Chat"
+
+msgid "Custom CSS"
+msgstr "CSS personalizado"
+
+msgid "Optional. Add extra CSS rules to fine-tune Cart2Chat styles on the frontend."
+msgstr "Opcional. Agrega reglas CSS adicionales para ajustar con mayor detalle los estilos de Cart2Chat en el frontend."
+
 msgid "Actions"
 msgstr "Acciones"
 
